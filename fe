@@ -1,0 +1,25 @@
+#!/usr/bin/bash
+
+command=$1
+
+function usage {
+    echo "Usage: $0 <command>"
+    echo "Commands:"
+    echo "  run: Run the frontend"
+}
+
+case $command in
+    run)
+        npm start
+        ;;
+    *)
+        echo "Invalid command"
+        usage
+        exit
+        ;;
+esac
+
+
+
+
+
