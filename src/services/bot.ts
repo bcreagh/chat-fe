@@ -13,15 +13,15 @@ class BotConfigReq {
 }
 
 export interface HiddenField {
-    fieldName: string;
+    field_name: string;
     label: string;
 }
 
 export class BotConfig {
     name: string = '';
     prompt: string = '';
-    hiddenFields: HiddenField[] = [];
-    answerFormat: any;
+    hidden_fields: HiddenField[] = [];
+    answer_format: any;
 }
 
 @Injectable({

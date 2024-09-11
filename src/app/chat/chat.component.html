@@ -1,3 +1,4 @@
+<div class="small-height-spacer"></div>
 <div class="chat-interaction">
     <mat-form-field class="chat-interaction-element">
         <mat-label>Enter your input</mat-label>
@@ -6,7 +7,24 @@
     <div class="chat-interaction-button-container">
         <button mat-flat-button color="primary" (click)="callChat()">Send</button>
     </div>
-    <div>
-        
-    </div>
+    <div class="small-height-spacer"></div>
+    @if (responseWords.length > 0) {
+        <div class="response-primary response-text">
+            @for (word of responseWords; track word) {
+                <span (click)="selectWord(word.explanationIndex)" class="response-word">{{ word.word }} </span>
+            }
+        </div>
+        <div class="small-height-spacer"></div>
+        <div class="chat-interaction-button-container">
+            @for (field of botConfig.hidden_fields; track field) {
+                <button mat-flat-button color="primary" (click)="showField(field.field_name)">{{ field.label }}</button>
+            }
+        </div>
+        <div class="small-height-spacer"></div>
+    }
+    @if (workingAreaContent.length > 0) {
+        <div class="response-working-area response-text">
+            {{ workingAreaContent}}
+        </div>
+    }
 </div>

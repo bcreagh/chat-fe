@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { map } from 'rxjs';
 
 // Example usage
 const apiUrl = 'http://localhost:8000/chat';
@@ -14,25 +15,15 @@ class ChatReq {
     bot: string;
 }
 
-export interface HiddenField {
-    fieldName: string;
-    label: string;
+export class Word {
+    word: string = "";
+    explanation: string = "";
 }
 
-export interface Word {
-    word: string;
-    explanation: string;
-}
-
-export interface Answer {
-    english: string;
-    ukrainian: string;
-    hiddenFields: HiddenField[];
-    words: Word[];
-}
-
-export interface ChatResp  {
-    message: string;
+export class ChatResp {
+    english: string = "";
+    ukrainian: string = "";
+    words: Word[] = [];
 }
 
 @Injectable({
