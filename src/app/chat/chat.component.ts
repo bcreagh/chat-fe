@@ -45,7 +45,7 @@ export class ChatComponent {
       for (let word of resp.ukrainian.split(' ')) {
         let responseWord = new ResponseWord();
         responseWord.word = word;
-        if (resp.words.length > i && resp.words[i].word == word.replace(/[,\.]/g, '')) {
+        if (resp.words.length > i && resp.words[i].word == word.replace(/[,\.\?\:\;]/g, '')) {
           responseWord.explanationIndex = i;
           i++;
           
