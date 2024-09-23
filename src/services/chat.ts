@@ -23,6 +23,7 @@ export class Word {
 export class ChatResp {
     english: string = "";
     ukrainian: string = "";
+    stressed: string = "";
     words: Word[] = [];
 }
 

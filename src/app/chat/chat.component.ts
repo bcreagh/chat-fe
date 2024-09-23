@@ -66,4 +66,15 @@ export class ChatComponent {
   showField(fieldName: string) {
     this.workingAreaContent = this.response[fieldName as keyof ChatResp].toString();
   }
+
+  showFlashcardFormat() {
+    let br = "<br>";
+    let fcFormat = this.response.stressed + br + br;
+    fcFormat += this.response.english + br + br + "<ul>";
+    for (let word of this.response.words) {
+      fcFormat += "<li>" + word.word + " - " + word.explanation + "</li>";
+    }
+    fcFormat += "</ul>";
+    this.workingAreaContent = fcFormat;
+  }
 }

@@ -19,6 +19,7 @@
             @for (field of botConfig.hidden_fields; track field) {
                 <button mat-flat-button color="primary" (click)="showField(field.field_name)">{{ field.label }}</button>
             }
+            <button mat-flat-button color="primary" (click)="showFlashcardFormat()">Flashcard Format</button>
         </div>
         <div class="small-height-spacer"></div>
     }
